@@ -1,44 +1,50 @@
 ---
 layout: default
 title: Homepage
-fruit: 
- - title: Apple
-   description: The best fruit
- - title: Banana
-   description: The second best fruit
- - title: Pear
-   description: The worst fruit
- - title: Pineapple
-   description: What even is this?
+news: 
+ - title: Big Sale
+   description: Exciting things are happening
+   date: 13th Jan
+   category: promo
+   url: https://www.sale.com
+ - title: New Puppy
+   description: Woof woof woof!
+   date: 4th Apr
+   category: pet care
+   url: https://www.sale.com
+ - title: Fresh Salads
+   description: Free food to make friends
+   date: 18th Jul
+   category: perks
+   url: https://www.sale.com
+ - title: Houdinis tricks
+   description: Free food to make friends
+   date: 18th Jul
+   category: perks
+   url: https://www.sale.com
+
+ 
 ---
 
-<section> 
+<section class="padded bg-featured grid-spaceBetween latest-news">
 
-    {% for item in page.fruit %}
-    <div class="card">
-        <h2> {{item.title}} </h2>
-        <p> {{item.description}} </p>
+  {% for item in page.news %}
+    <!-- First Card -->
+    <div class="col-3_xs-8">
+      <div class="card">
+        <div class="bg-image portrait">
+          <span> {{item.category}} </span>
+        </div>
+        <div class="post-info">
+          <p class="date"> {{item.date}} </p>
+          <h3> {{item.title}} </h3>
+          <p> {{item.description}} </p>
+          <a href="{{item.url}}"> Find out more &nbsp; &#10141 </a>
+        </div>
+      </div>
     </div>
-    {% endfor %}
 
+  {% endfor %}
 
-    <!--
-    <div class="card"> 
-        <h2> Apple </h2>
-        <p> The best fruit. </p>
-    </div>
-    <div class="card">
-        <h2> Pineapple </h2>
-        <p> The second best fruit. </p>
-    </div>
-    <div class="card">
-        <h2> Banana </h2>
-        <p> The worst fruit. </p>
-    </div>
-    <div class="card">
-        <h2> Pear </h2>
-        <p> What even is this? </p>
-    </div>
-    -->
-
+    
 </section>
